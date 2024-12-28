@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.cristina.generaredocsrl.RegisterController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="450.0" prefWidth="800.0">
+         <children>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #229799;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="333.0" layoutY="34.0" text="Register" textAlignment="CENTER" textFill="#424242">
+                     <font>
+                        <Font name="Agency FB Bold" size="46.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutY="126.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #F5F5F5;">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="40.0" layoutY="50.0" prefHeight="22.0" prefWidth="86.0" text="Nume" textFill="#424242">
+                     <font>
+                        <Font name="Agency FB" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="40.0" layoutY="136.0" prefHeight="22.0" prefWidth="86.0" text="Prenume" textFill="#424242">
+                     <font>
+                        <Font name="Agency FB" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="40.0" layoutY="240.0" text="Nume utilizator" textFill="#424242">
+                     <font>
+                        <Font name="Agency FB" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="434.0" layoutY="48.0" prefHeight="25.0" prefWidth="90.0" text="Parolă" textFill="#424242">
+                     <font>
+                        <Font name="Agency FB" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="lastnameTextField" layoutX="40.0" layoutY="76.0" prefHeight="40.0" prefWidth="280.0" />
+                  <TextField fx:id="firstnameTextField" layoutX="40.0" layoutY="165.0" prefHeight="40.0" prefWidth="280.0" />
+                  <TextField fx:id="usernameTextField" layoutX="40.0" layoutY="266.0" prefHeight="40.0" prefWidth="280.0" />
+                  <Button fx:id="registerButton" layoutX="371.0" layoutY="338.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="73.0" prefWidth="174.0" style="-fx-background-color: #229799; -fx-text-fill: #424242; -fx-font-family: Agencz FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Înregistrare client" textFill="#424242">
+                     <font>
+                        <Font name="Agency FB Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Label alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="434.0" layoutY="136.0" prefHeight="22.0" prefWidth="120.0" text="Confirmă parola" textFill="#424242">
+                     <font>
+                        <Font name="Agency FB" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="backButton" layoutX="574.0" layoutY="338.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="73.0" prefWidth="174.0" style="-fx-background-color: #229799; -fx-text-fill: #424242; -fx-font-family: Agencz FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Înapoi" textFill="#424242">
+                     <font>
+                        <Font name="Agency FB Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <PasswordField fx:id="setPasswordField" layoutX="434.0" layoutY="76.0" prefHeight="40.0" prefWidth="280.0" />
+                  <PasswordField fx:id="confirmPasswordField" layoutX="434.0" layoutY="158.0" prefHeight="40.0" prefWidth="280.0" />
+                  <TextField fx:id="emailTextField" layoutX="40.0" layoutY="348.0" prefHeight="40.0" prefWidth="280.0" />
+                  <Label alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="40.0" layoutY="326.0" text="Email" textFill="#424242">
+                     <font>
+                        <Font name="Agency FB" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

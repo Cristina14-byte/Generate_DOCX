@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.cristina.generaredocsrl.AdminMenuController">
+    <children>
+        <AnchorPane layoutX="250.0" prefHeight="450.0" prefWidth="550.0">
+            <children>
+                <Button fx:id="backButton" layoutX="225.0" layoutY="320.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #229799;" text="Înapoi">
+                    <font>
+                        <Font name="Agency FB Bold" size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="srlDBButton" layoutX="175.0" layoutY="80.0" mnemonicParsing="false" onAction="#srlDBButtonOnAction" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #229799;" text="Vizualizare SRL">
+                    <font>
+                        <Font name="Agency FB Bold" size="18.0" />
+                    </font>
+                </Button>
+            <Button fx:id="seeClientDataButton" layoutX="175.0" layoutY="180.0" mnemonicParsing="false" onAction="#seeClientDataButtonOnAction" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #229799;" text="Vizualizare date clienţi">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+            </Button>
+            </children>
+        </AnchorPane>
+      <AnchorPane prefHeight="450.0" prefWidth="250.0" style="-fx-background-color: #229799;">
+         <children>
+            <Label layoutX="79.0" layoutY="181.0" text="Menu" textFill="#424242">
+               <font>
+                  <Font name="Agency FB Bold" size="46.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
