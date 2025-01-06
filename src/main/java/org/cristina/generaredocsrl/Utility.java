@@ -10,9 +10,9 @@ public class Utility {
 
     public static void navigateToView(String fxmlFile, Button button){
         try{
-            Stage adminMenuStage = (Stage) button.getScene().getWindow();
+            Stage stage = (Stage) button.getScene().getWindow();
             Parent root = FXMLLoader.load(Utility.class.getResource(fxmlFile));
-            adminMenuStage.getScene().setRoot(root);
+            stage.getScene().setRoot(root);
 
         } catch(Exception e) {
             e.printStackTrace();

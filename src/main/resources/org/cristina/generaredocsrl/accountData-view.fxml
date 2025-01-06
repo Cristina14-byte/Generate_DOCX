@@ -49,22 +49,22 @@
                               <Font name="Agency FB" size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="surnameLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="132.0" layoutY="53.0" prefHeight="30.0" prefWidth="174.0" textFill="#424242">
+                        <Label fx:id="surnameLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="132.0" layoutY="53.0" prefHeight="30.0" prefWidth="264.0" textFill="#424242">
                            <font>
                               <Font name="Agency FB Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="firstnameLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="132.0" layoutY="86.0" prefHeight="30.0" prefWidth="174.0" textFill="#424242">
+                        <Label fx:id="firstnameLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="132.0" layoutY="86.0" prefHeight="30.0" prefWidth="264.0" textFill="#424242">
                            <font>
                               <Font name="Agency FB Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="emailLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="132.0" layoutY="158.0" prefHeight="30.0" prefWidth="174.0" textFill="#424242">
+                        <Label fx:id="emailLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="132.0" layoutY="158.0" prefHeight="30.0" prefWidth="264.0" textFill="#424242">
                            <font>
                               <Font name="Agency FB Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="usernameLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="132.0" layoutY="118.0" prefHeight="30.0" prefWidth="174.0" textFill="#424242">
+                        <Label fx:id="usernameLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="132.0" layoutY="118.0" prefHeight="30.0" prefWidth="264.0" textFill="#424242">
                            <font>
                               <Font name="Agency FB Bold" size="24.0" />
                            </font>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.cristina.generaredocsrl.SaveFolderController">
+   <children>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #229799;">
+         <children>
+            <Label layoutX="355.0" layoutY="21.0" text="Setup" textFill="#424242">
+               <font>
+                  <Font name="Agency FB Bold" size="46.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="99.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="356.0" prefWidth="800.0" style="-fx-background-color: #F5F5F5;">
+         <children>
+            <Button fx:id="createDocButton" layoutX="304.0" layoutY="190.0" mnemonicParsing="false" onAction="#createDocButtonAction" prefHeight="75.0" prefWidth="190.0" style="-fx-background-color: #229799; -fx-text-fill: #424242; -fx-font-family: Agencz FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Da" textFill="#424242">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="backMenuButton" layoutX="571.0" layoutY="250.0" mnemonicParsing="false" onAction="#backMenuButtonOnAction" prefHeight="75.0" prefWidth="190.0" style="-fx-background-color: #229799; -fx-text-fill: #424242; -fx-font-family: Agencz FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Înapoi la menu" textFill="#424242">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="SRLNameLabel21114" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="133.0" layoutY="104.0" prefHeight="44.0" prefWidth="533.0" text="Sunteţi sigur că doriţi să creaţi documentul?" textFill="#424242">
+               <font>
+                  <Font name="Agency FB" size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="backButton" layoutX="38.0" layoutY="250.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="75.0" prefWidth="190.0" style="-fx-background-color: #229799; -fx-text-fill: #424242; -fx-font-family: Agencz FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Înapoi" textFill="#424242">
+               <font>
+                  <Font name="Agency FB Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

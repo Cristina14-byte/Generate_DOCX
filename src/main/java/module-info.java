@@ -14,10 +14,9 @@ module org.cristina.generaredocsrl {
 
     requires java.sql;
     requires org.postgresql.jdbc;
-    requires java.desktop;
     requires jdk.jshell;
+    requires org.apache.poi.ooxml;
 
-    opens org.cristina.generaredocsrl.model to javafx.base;
     exports org.cristina.generaredocsrl.model;
 
     opens org.cristina.generaredocsrl.connection to javafx.sql;
@@ -26,5 +25,6 @@ module org.cristina.generaredocsrl {
     opens org.cristina.generaredocsrl.repository to javafx.sql;
     exports org.cristina.generaredocsrl.repository;
     opens org.cristina.generaredocsrl to javafx.fxml, javafx.sql;
+    opens org.cristina.generaredocsrl.model to javafx.base, javafx.fxml, javafx.sql;
 
 }

@@ -51,25 +51,25 @@ public class LoginController {
 
     private void validateLogin(String username, String password){
         try {
-        DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connectDB = connectNow.getConnection();
+            DatabaseConnection connectNow = new DatabaseConnection();
+            Connection connectDB = connectNow.getConnection();
 
-        PreparedStatement statement = connectDB.prepareStatement(VERIFY_LOGIN_QUERY);
-        statement.setString(1, username);
-        statement.setString(2, password);
-        ResultSet queryResult = statement.executeQuery();
+            PreparedStatement statement = connectDB.prepareStatement(VERIFY_LOGIN_QUERY);
+            statement.setString(1, username);
+            statement.setString(2, password);
+            ResultSet queryResult = statement.executeQuery();
 
-        if (queryResult.next()) {
-            loggedInPersonId = queryResult.getInt("person_id");
-            String priority = queryResult.getString("priority");
-            if ("admin".equals(priority)) {
-                Utility.navigateToView("adminMenu-view.fxml",loginButton);
+            if (queryResult.next()) {
+                loggedInPersonId = queryResult.getInt("person_id");
+                String priority = queryResult.getString("priority");
+                if ("admin".equals(priority)) {
+                    Utility.navigateToView("adminMenu-view.fxml",loginButton);
+                } else {
+                    Utility.navigateToView("clientMenu-view.fxml",loginButton);
+                }
             } else {
-                Utility.navigateToView("clientMenu-view.fxml",loginButton);
+                Utility.showAlert(Alert.AlertType.ERROR, "Eroare", "Conectare invalidă!");
             }
-        } else {
-            Utility.showAlert(Alert.AlertType.ERROR, "Eroare", "Conectare invalidă!");
-        }
         } catch (Exception e){
             e.printStackTrace();
             Utility.showAlert(Alert.AlertType.ERROR, "Eroare", "Eroare validare logare!");
@@ -82,7 +82,7 @@ public class LoginController {
             Utility.showAlert(Alert.AlertType.ERROR, "Eroare", "Introduceţi un nume de utilizator!");
             return;
         }
-        
+
         try{
             DatabaseConnection connectNow = new DatabaseConnection();
             Connection connectDB = connectNow.getConnection();

@@ -1,5 +1,4 @@
 package org.cristina.generaredocsrl;
-import eu.hansolo.tilesfx.chart.SunburstChart;
 import org.cristina.generaredocsrl.RegisterController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

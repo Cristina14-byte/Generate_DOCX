@@ -34,7 +34,7 @@ public class SRLDBController {
     private static final String USERNAME_SELECT = "SELECT username FROM person WHERE priority = 'client'";
     private static final String SELECT_SRL = "SELECT srl.name FROM srl INNER JOIN person ON srl.person_id = person.person_id WHERE person.username = ?;";
     private static final String DELETE_SRL = "DELETE FROM srl WHERE name = ?";
-    
+
     private ObservableList<srl> srlList = FXCollections.observableArrayList();
     private ObservableList<String> usernameList = FXCollections.observableArrayList();
 

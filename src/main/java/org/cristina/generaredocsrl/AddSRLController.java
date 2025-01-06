@@ -33,13 +33,9 @@ public class AddSRLController {
     @FXML
     private ChoiceBox<String> countyChoiceBox;
     @FXML
-    private Label addSRLLabel;
-    @FXML
-    private Label invalidLabel;
-    @FXML
-    private Button addSRLButton;
-    @FXML
     private Button backButton;
+    @FXML
+    private TextField rcRegisterTextField;
 
     private static final String SELECT_USER = "SELECT username FROM person WHERE priority = 'client'";
     private static final String SELECT_BANK = "SELECT bank_name FROM bank";
@@ -48,21 +44,21 @@ public class AddSRLController {
     private static final String SELECT_BANK_ID = "SELECT bank_id FROM bank WHERE bank_name = ?";
     private static final String SELECT_COUNTY_ID = "SELECT county_id FROM county WHERE county_name = ?";
     private static final String INSERT_SRL = "INSERT INTO srl (name, person_id, hq, tax_code, phone_nr, " +
-                                             "bank_account, bank_id, bcounty_id) VALUES (?,?,?,?,?,?,?,?)";
+            "bank_account, bank_id, bcounty_id, rcregister) VALUES (?,?,?,?,?,?,?,?,?)";
 
     private ObservableList<String> usernameList = FXCollections.observableArrayList     ();
     private ObservableList<String> bankList = FXCollections.observableArrayList();
     private ObservableList<String> countyList = FXCollections.observableArrayList();
 
-    public boolean isValidPhoneNumber(String phoneNumber) {
+    public static boolean isValidPhoneNumber(String phoneNumber) {
         return phoneNumber.matches("^[0-9]{10}$");
     }
 
-    public boolean isValidIBAN(String iban){
+    public static boolean isValidIBAN(String iban){
         return iban.matches("^RO[0-9A-Z]{22}$");
     }
 
-    public boolean isValidTaxCode(String taxCode){
+    public static boolean isValidTaxCode(String taxCode){
         return taxCode.matches("RO\\d{2,10}");
     }
 
@@ -151,9 +147,10 @@ public class AddSRLController {
         String username = (String) usernameChoiceBox.getValue();
         String bank = (String) bankChoiceBox.getValue();
         String county = (String) countyChoiceBox.getValue();
+        String rcRegister = rcRegisterTextField.getText();
 
         if (srlName.isEmpty() || hq.isEmpty() || taxCode.isEmpty() || phoneNr.isEmpty() ||
-                bankAccount.isEmpty() || username == null || bank == null || county == null) {
+                bankAccount.isEmpty() || username == null || bank == null || county == null || rcRegister.isEmpty()) {
 
             Utility.showAlert(Alert.AlertType.WARNING, "Atenţie!", "Toate câmpurile sunt obligatorii!");
             return;
@@ -214,6 +211,7 @@ public class AddSRLController {
             srlStmt.setString(6, bankAccount);
             srlStmt.setInt(7, bankId);
             srlStmt.setInt(8, countyId);
+            srlStmt.setString(9, rcRegister);
 
             int rowsAffected = srlStmt.executeUpdate();
 

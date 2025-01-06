@@ -14,7 +14,7 @@ public class ClientMenuController {
     private Button backButton;
 
     public void createDocButtonOnAction(ActionEvent event) {
-        Utility.navigateToView("chooseFolder-view.fxml", createDocButton);
+        Utility.navigateToView("clientsClient-view.fxml", createDocButton);
     }
 
     public void accountDataButtonOnAction(ActionEvent event) {

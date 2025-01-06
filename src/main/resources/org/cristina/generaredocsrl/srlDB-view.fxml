@@ -23,14 +23,14 @@
                     </font>
                 </Label>
                 <ChoiceBox fx:id="usernameChoiceBox" layoutX="335.0" layoutY="31.0" prefWidth="150.0" style="-fx-background-color: #1e8789;" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="51.0" prefWidth="179.0" text="Date SRL" textAlignment="CENTER" textFill="#424242">
-               <font>
-                  <Font name="Agency FB Bold" size="46.0" />
-               </font>
-            </Label>
-              <Button fx:id="deleteButton" layoutX="711.0" layoutY="31.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="DELETE" />
-              <Button fx:id="refreshButton" layoutX="636.0" layoutY="31.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="REFRESH" />
-              <Button fx:id="addSRLButton" layoutX="585.0" layoutY="31.0" mnemonicParsing="false" onAction="#addSRLOnAction" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="ADD" />
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="51.0" prefWidth="179.0" text="Date SRL" textAlignment="CENTER" textFill="#424242">
+                    <font>
+                        <Font name="Agency FB Bold" size="46.0" />
+                    </font>
+                </Label>
+                <Button fx:id="deleteButton" layoutX="711.0" layoutY="31.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="DELETE" />
+                <Button fx:id="refreshButton" layoutX="636.0" layoutY="31.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="REFRESH" />
+                <Button fx:id="addSRLButton" layoutX="585.0" layoutY="31.0" mnemonicParsing="false" onAction="#addSRLOnAction" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="ADD" />
             </children>
         </AnchorPane>
         <Button fx:id="backButton" layoutX="640.0" layoutY="388.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #229799; -fx-text-fill: #424242; -fx-font-family: Agency FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Înapoi" textFill="#424242">

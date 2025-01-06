@@ -9,41 +9,41 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.cristina.generaredocsrl.ClientsDBController">
-   <children>
-      <TableView fx:id="clientsTable" layoutX="45.0" layoutY="178.0" prefHeight="258.0" prefWidth="710.0">
-        <columns>
-          <TableColumn fx:id="usernameColumn" prefWidth="175.0" text="Username" />
-          <TableColumn fx:id="firstnameColumn" prefWidth="175.0" text="Prenume" />
-            <TableColumn fx:id="lastnameColumn" prefWidth="175.0" text="Nume" />
-            <TableColumn fx:id="emailColumn" prefWidth="183.99997558593748" text="Email" />
-        </columns>
-      </TableView>
-      <AnchorPane prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #229799;">
-         <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="14.0" prefHeight="51.0" prefWidth="179.0" text="Date clienţi" textAlignment="CENTER" textFill="#424242">
-               <font>
-                  <Font name="Agency FB Bold" size="46.0" />
-               </font>
-            </Label>
-            <Button fx:id="backButton" layoutX="652.0" layoutY="30.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #1e8789; -fx-text-fill: #424242; -fx-font-family: Agency FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Înapoi" textFill="#424242">
-               <font>
-                  <Font name="Agency FB Bold" size="18.0" />
-               </font>
-            </Button>
-            <Button fx:id="deleteButton" layoutX="171.0" layoutY="35.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="DELETE" />
-            <Button fx:id="refreshButton" layoutX="87.0" layoutY="35.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="REFRESH" />
-            <Button fx:id="registerClientButton" layoutX="23.0" layoutY="35.0" mnemonicParsing="false" onAction="#createRegisterForm" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="ADD" />
-         </children>
-      </AnchorPane>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="115.0" prefHeight="51.0" prefWidth="179.0" text="Username:" textAlignment="CENTER" textFill="#424242">
-         <font>
-            <Font name="Agency FB Bold" size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="searchUsernameTextField" layoutX="171.0" layoutY="128.0" onKeyReleased="#searchUsername" prefHeight="26.0" prefWidth="266.0">
-         <font>
-            <Font name="Agency FB" size="18.0" />
-         </font>
-      </TextField>
-   </children>
+    <children>
+        <TableView fx:id="clientsTable" layoutX="45.0" layoutY="178.0" prefHeight="258.0" prefWidth="710.0">
+            <columns>
+                <TableColumn fx:id="usernameColumn" prefWidth="175.0" text="Username" />
+                <TableColumn fx:id="firstnameColumn" prefWidth="175.0" text="Prenume" />
+                <TableColumn fx:id="lastnameColumn" prefWidth="175.0" text="Nume" />
+                <TableColumn fx:id="emailColumn" prefWidth="183.99997558593748" text="Email" />
+            </columns>
+        </TableView>
+        <AnchorPane prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #229799;">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="14.0" prefHeight="51.0" prefWidth="179.0" text="Date clienţi" textAlignment="CENTER" textFill="#424242">
+                    <font>
+                        <Font name="Agency FB Bold" size="46.0" />
+                    </font>
+                </Label>
+                <Button fx:id="backButton" layoutX="652.0" layoutY="30.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: #1e8789; -fx-text-fill: #424242; -fx-font-family: Agency FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Înapoi" textFill="#424242">
+                    <font>
+                        <Font name="Agency FB Bold" size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="deleteButton" layoutX="171.0" layoutY="35.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="DELETE" />
+                <Button fx:id="refreshButton" layoutX="87.0" layoutY="35.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="REFRESH" />
+                <Button fx:id="registerClientButton" layoutX="23.0" layoutY="35.0" mnemonicParsing="false" onAction="#createRegisterForm" style="-fx-background-color: #1e8789; -fx-text-fill: #424242;" text="ADD" />
+            </children>
+        </AnchorPane>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="115.0" prefHeight="51.0" prefWidth="179.0" text="Username:" textAlignment="CENTER" textFill="#424242">
+            <font>
+                <Font name="Agency FB Bold" size="24.0" />
+            </font>
+        </Label>
+        <TextField fx:id="searchUsernameTextField" layoutX="171.0" layoutY="128.0" onKeyReleased="#searchUsername" prefHeight="26.0" prefWidth="266.0">
+            <font>
+                <Font name="Agency FB" size="18.0" />
+            </font>
+        </TextField>
+    </children>
 </AnchorPane>

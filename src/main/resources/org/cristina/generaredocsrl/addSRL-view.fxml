@@ -23,67 +23,73 @@
                                 <Font name="Agency FB" size="18.0" />
                             </font>
                         </Label>
-                  <ChoiceBox fx:id="usernameChoiceBox" layoutX="35.0" layoutY="46.0" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: #1e8789;" />
+                        <ChoiceBox fx:id="usernameChoiceBox" layoutX="35.0" layoutY="46.0" prefHeight="40.0" prefWidth="280.0" style="-fx-background-color: #1e8789;" />
+                        <Label fx:id="addSRLLabel" alignment="CENTER" layoutX="129.0" layoutY="5.0" prefHeight="26.0" prefWidth="280.0" textFill="#424242">
+                            <font>
+                                <Font name="Agency FB Bold" size="18.0" />
+                            </font></Label>
                     </children>
                 </AnchorPane>
                 <AnchorPane layoutY="100.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="800.0" style="-fx-background-color: #F5F5F5;">
                     <children>
-                        <Label fx:id="SRLNameLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="39.0" layoutY="21.0" prefHeight="22.0" prefWidth="86.0" text="Nume SRL" textFill="#424242">
+                        <Label fx:id="SRLNameLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="36.0" layoutY="12.0" prefHeight="22.0" prefWidth="86.0" text="Nume SRL" textFill="#424242">
                             <font>
                                 <Font name="Agency FB" size="18.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="srlNameTextField" layoutX="39.0" layoutY="50.0" prefHeight="40.0" prefWidth="280.0" />
-                        <Button fx:id="addSRLButton" layoutX="383.0" layoutY="283.0" mnemonicParsing="false" onAction="#SRLButtonOnAction" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #229799; -fx-text-fill: #424242; -fx-font-family: Agencz FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Adaugă SRL" textFill="#424242">
+                        <TextField fx:id="srlNameTextField" layoutX="36.0" layoutY="41.0" prefHeight="40.0" prefWidth="280.0" />
+                        <Button fx:id="addSRLButton" layoutX="662.0" layoutY="147.0" mnemonicParsing="false" onAction="#SRLButtonOnAction" prefHeight="40.0" prefWidth="131.0" style="-fx-background-color: #229799; -fx-text-fill: #424242; -fx-font-family: Agencz FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Adaugă SRL" textFill="#424242">
                             <font>
                                 <Font name="Agency FB Bold" size="18.0" />
                             </font>
                         </Button>
-                        <Button fx:id="backButton" layoutX="581.0" layoutY="283.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #229799; -fx-text-fill: #424242; -fx-font-family: Agencz FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Anulează" textFill="#424242">
+                        <Button fx:id="backButton" layoutX="662.0" layoutY="203.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="40.0" prefWidth="131.0" style="-fx-background-color: #229799; -fx-text-fill: #424242; -fx-font-family: Agencz FB; -fx-font-size: 18; -fx-font-weight: Bold;" text="Anulează" textFill="#424242">
                             <font>
                                 <Font name="Agency FB Bold" size="18.0" />
                             </font>
                         </Button>
-                        <Label fx:id="addSRLLabel" alignment="CENTER" layoutX="329.0" layoutY="307.0" prefHeight="26.0" prefWidth="280.0" textFill="#424242">
-                     <font>
-                        <Font name="Agency FB Bold" size="18.0" />
-                     </font></Label>
-                  <Label fx:id="hqLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="39.0" layoutY="107.0" prefHeight="22.0" prefWidth="86.0" text="Sediu Social" textFill="#424242">
+                        <Label fx:id="hqLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="36.0" layoutY="98.0" prefHeight="22.0" prefWidth="86.0" text="Sediu Social" textFill="#424242">
+                            <font>
+                                <Font name="Agency FB" size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="hqTextField" layoutX="36.0" layoutY="127.0" prefHeight="40.0" prefWidth="280.0" />
+                        <Label fx:id="taxCodeLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="36.0" layoutY="174.0" prefHeight="22.0" prefWidth="86.0" text="Cod fiscal" textFill="#424242">
+                            <font>
+                                <Font name="Agency FB" size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="taxCodeTextField" layoutX="36.0" layoutY="203.0" prefHeight="40.0" prefWidth="280.0" />
+                        <Label fx:id="bankAccountLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="366.0" layoutY="9.0" prefHeight="22.0" prefWidth="86.0" text="Cont bancar" textFill="#424242">
+                            <font>
+                                <Font name="Agency FB" size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="bankAccountTextField" layoutX="366.0" layoutY="38.0" prefHeight="40.0" prefWidth="280.0" />
+                        <Label fx:id="bankLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="366.0" layoutY="83.0" prefHeight="22.0" prefWidth="124.0" text="Deschis la banca" textFill="#424242">
+                            <font>
+                                <Font name="Agency FB" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="phoneNrLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="36.0" layoutY="252.0" prefHeight="22.0" prefWidth="153.0" text="Nr. telefon contact" textFill="#424242">
+                            <font>
+                                <Font name="Agency FB" size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="phoneNrTextField" layoutX="36.0" layoutY="281.0" prefHeight="40.0" prefWidth="280.0" />
+                        <ChoiceBox fx:id="bankChoiceBox" layoutX="366.0" layoutY="111.0" prefHeight="40.0" prefWidth="280.0" />
+                        <ChoiceBox fx:id="countyChoiceBox" layoutX="366.0" layoutY="191.0" prefHeight="40.0" prefWidth="280.0" />
+                        <Label fx:id="CountyLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="366.0" layoutY="163.0" prefHeight="22.0" prefWidth="124.0" text="Din judeţul" textFill="#424242">
+                            <font>
+                                <Font name="Agency FB" size="18.0" />
+                            </font>
+                        </Label>
+                  <Label fx:id="phoneNrLabel1" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="366.0" layoutY="246.0" prefHeight="22.0" prefWidth="153.0" text="Înregistrare RC" textFill="#424242">
                      <font>
                         <Font name="Agency FB" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="hqTextField" layoutX="39.0" layoutY="136.0" prefHeight="40.0" prefWidth="280.0" />
-                  <Label fx:id="taxCodeLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="39.0" layoutY="183.0" prefHeight="22.0" prefWidth="86.0" text="Cod fiscal" textFill="#424242">
-                     <font>
-                        <Font name="Agency FB" size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="taxCodeTextField" layoutX="39.0" layoutY="212.0" prefHeight="40.0" prefWidth="280.0" />
-                  <Label fx:id="bankAccountLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="419.0" layoutY="17.0" prefHeight="22.0" prefWidth="86.0" text="Cont bancar" textFill="#424242">
-                     <font>
-                        <Font name="Agency FB" size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="bankAccountTextField" layoutX="419.0" layoutY="46.0" prefHeight="40.0" prefWidth="280.0" />
-                  <Label fx:id="bankLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="419.0" layoutY="91.0" prefHeight="22.0" prefWidth="124.0" text="Deschis la banca" textFill="#424242">
-                     <font>
-                        <Font name="Agency FB" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="phoneNrLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="39.0" layoutY="261.0" prefHeight="22.0" prefWidth="153.0" text="Nr. telefon contact" textFill="#424242">
-                     <font>
-                        <Font name="Agency FB" size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="phoneNrTextField" layoutX="39.0" layoutY="290.0" prefHeight="40.0" prefWidth="280.0" />
-                  <ChoiceBox fx:id="bankChoiceBox" layoutX="419.0" layoutY="119.0" prefHeight="40.0" prefWidth="280.0" />
-                  <ChoiceBox fx:id="countyChoiceBox" layoutX="419.0" layoutY="209.0" prefHeight="40.0" prefWidth="280.0" />
-                  <Label fx:id="CountyLabel" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="419.0" layoutY="181.0" prefHeight="22.0" prefWidth="124.0" text="Deschis la banca" textFill="#424242">
-                     <font>
-                        <Font name="Agency FB" size="18.0" />
-                     </font>
-                  </Label>
+                  <TextField fx:id="rcRegisterTextField" layoutX="366.0" layoutY="275.0" prefHeight="40.0" prefWidth="280.0" />
                     </children>
                 </AnchorPane>
             </children>
