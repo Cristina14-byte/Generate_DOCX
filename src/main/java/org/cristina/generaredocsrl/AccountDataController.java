@@ -1,5 +1,4 @@
 package org.cristina.generaredocsrl;
-import org.cristina.generaredocsrl.RegisterController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -11,7 +10,6 @@ import org.cristina.generaredocsrl.connection.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class AccountDataController  {
 

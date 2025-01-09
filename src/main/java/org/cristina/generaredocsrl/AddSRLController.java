@@ -1,5 +1,5 @@
 package org.cristina.generaredocsrl;
-import org.cristina.generaredocsrl.Utility;
+import javafx.stage.Stage;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -217,11 +217,9 @@ public class AddSRLController {
 
             if(rowsAffected > 0){
                 Utility.showAlert(Alert.AlertType.CONFIRMATION, "Succes", "SRL înregistrat cu succes!");
-                return;
             }
             else{
                 Utility.showAlert(Alert.AlertType.ERROR, "Eroare", "Eroare înregistrare SRL!");
-                return;
             }
 
         }catch(Exception e){
@@ -231,6 +229,7 @@ public class AddSRLController {
     }
 
     public void backButtonOnAction(ActionEvent e) {
-        Utility.navigateToView("srlDB-view.fxml", backButton);
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        stage.close();
     }
 }

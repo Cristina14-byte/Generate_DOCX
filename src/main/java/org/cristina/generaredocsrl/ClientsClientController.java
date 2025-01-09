@@ -43,6 +43,7 @@ public class ClientsClientController {
         activityDomainList.add("Magazin");
         activityDomainList.add("Transport");
         activityDomainList.add("Service Auto");
+        activityDomainList.add("Horeca");
         activityDomainChoiceBox.setItems(activityDomainList);
     }
 

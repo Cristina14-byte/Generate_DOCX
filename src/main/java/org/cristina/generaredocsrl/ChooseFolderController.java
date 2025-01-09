@@ -68,7 +68,11 @@ public class ChooseFolderController {
 
         clientData.setPersonalSrl(srlChoiceBox.getValue());
         clientData.setContractNr(contractNrTextField.getText());
-        clientData.setPrice(Integer.parseInt(priceTextField.getText()));
+        try {
+            clientData.setPrice(Integer.parseInt(priceTextField.getText()));
+        }catch(Exception e){
+            Utility.showAlert(Alert.AlertType.WARNING, "Atenţie!", "Preţul trebuie să fie un număr!");
+        }
         clientData.setPsi(psiCheckBox.isSelected());
         clientData.setSsm(ssmCheckBox.isSelected());
 
@@ -79,11 +83,6 @@ public class ChooseFolderController {
 
         if (!isValidInteger(clientData.getContractNr())) {
             Utility.showAlert(Alert.AlertType.ERROR, "Eroare!", "Nr. de contract invalid!");
-            return;
-        }
-
-        if(!isValidInteger(priceTextField.getText())) {
-            Utility.showAlert(Alert.AlertType.ERROR, "Eroare!", "Preţ invalid!");
             return;
         }
 

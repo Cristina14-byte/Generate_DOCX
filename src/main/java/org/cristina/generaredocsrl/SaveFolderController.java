@@ -33,6 +33,7 @@ public class SaveFolderController {
     public static ClientData clientData = ChooseFolderController.clientData;
 
     int person_id = LoginController.loggedInPersonId;
+
     private static final String SRL_DATA = """
     SELECT srl.name, srl.hq, srl.tax_code, srl.phone_nr, srl.bank_account, 
            bank.bank_name AS bank_name, county.county_name AS county_name,
@@ -46,8 +47,11 @@ public class SaveFolderController {
     private static final String CONTRACT_PATH = "D:\\Generare_Documente\\Materiale\\Contract";
     private static final String PSI_PATH = "D:\\Generare_Documente\\Materiale\\PSI";
     private static final String SSM_PATH = "D:\\Generare_Documente\\Materiale\\SSM";
+    private static final String SSM_AD_PATH = SSM_PATH + "\\" + clientData.getActivityDomain();
+    private static final String FUNCTII_SSM_PATH = "D:\\Generare_Documente\\Materiale\\FUNCTII SSM";
 
     public void createDocButtonAction() {
+
         String srlName = ClientsClientController.clientData.getClientSrl();
         String SAVE_PATH = "D:\\Generare_Documente\\DOCUMENTE GENERATE\\" + srlName;
 
@@ -59,9 +63,16 @@ public class SaveFolderController {
 
         if (clientData.isPsi() && clientData.isSsm()){
             copyAndEditFile(new File(CONTRACT_PATH + "\\Contract SSM+PSI"), contractFolder);
+
             File ssmFolder = new File(mainFolder, "SSM");
             ssmFolder.mkdir();
-            copyAndEditFile(new File(SSM_PATH), ssmFolder);
+            copyAndEditFile(new File(SSM_AD_PATH), ssmFolder);
+            File ssmJobsFolder = new File(ssmFolder, "2   EVALUARI PE FUNCTII SOCIETATE");
+            for(String job : clientData.getSelectedJobs()) {
+                File jobFolder = new File(ssmJobsFolder, job);
+                jobFolder.mkdir();
+                copyAndEditFile(new File(FUNCTII_SSM_PATH + "\\" + job), jobFolder);
+            }
 
             File psiFolder = new File(mainFolder, "PSI");
             psiFolder.mkdir();
@@ -71,7 +82,14 @@ public class SaveFolderController {
             copyAndEditFile(new File(CONTRACT_PATH + "\\Contract SSM"), contractFolder);
             File ssmFolder = new File(mainFolder, "SSM");
             ssmFolder.mkdir();
-            copyAndEditFile(new File(SSM_PATH), ssmFolder);
+            copyAndEditFile(new File(SSM_AD_PATH), ssmFolder);
+            File ssmJobsFolder = new File(ssmFolder, "2   EVALUARI PE FUNCTII SOCIETATE");
+            for(String job : clientData.getSelectedJobs()) {
+                File jobFolder = new File(ssmJobsFolder, job);
+                jobFolder.mkdir();
+                copyAndEditFile(new File(FUNCTII_SSM_PATH + "\\" + job), jobFolder);
+            }
+
         } else if(clientData.isPsi()){
             copyAndEditFile(new File(CONTRACT_PATH + "\\Contract PSI"), contractFolder);
             File psiFolder = new File(mainFolder, "PSI");
@@ -99,13 +117,16 @@ public class SaveFolderController {
                 newDir.mkdir();
                 copyAndEditFile(file, newDir);
             } else if(file.getName().endsWith(".docx")){
+                if(file.getName().contains("~$")){
+                    continue;
+                }
                 File newFile = new File(destinationFolder, file.getName());
                 copyFile(file.getPath(), newFile.getPath());
                 editFile(newFile.getPath(), newFile.getPath());
             } else{
                 File newFile = new File(destinationFolder, file.getName());
                 copyFile(file.getPath(), newFile.getPath());
-              }
+            }
         }
     }
 
@@ -117,12 +138,25 @@ public class SaveFolderController {
              FileOutputStream fos = new FileOutputStream(destinationPath)) {
 
             for (XWPFParagraph paragraph : doc.getParagraphs()) {
-                for (XWPFRun run : paragraph.getRuns()) {
+                for (int i = 0; i < paragraph.getRuns().size(); i++) {
+                    XWPFRun run = paragraph.getRuns().get(i);
                     String text = run.getText(0);
                     if (text != null) {
                         for (Map.Entry<String, String> entry : placeholders.entrySet()) {
                             if (text.contains(entry.getKey())) {
                                 text = text.replace(entry.getKey(), entry.getValue());
+                            } else {
+                                if (text.startsWith("?")) {
+                                    if (entry.getKey().contains(text)) {
+                                        text = entry.getValue();
+                                        if (paragraph.getRuns().size() > i + 1) {
+                                            XWPFRun nextRun = paragraph.getRuns().get(i + 1);
+                                            String nextText = nextRun.getText(0);
+                                            nextText = null;
+                                            nextRun.setText(nextText, 0);
+                                        }
+                                    }
+                                }
                             }
                         }
                         run.setText(text, 0);
@@ -133,10 +167,23 @@ public class SaveFolderController {
             String clientSrl = placeholders.get("?CLIENT_SRL?");
             for (XWPFHeader header : doc.getHeaderList()) {
                 for (XWPFParagraph paragraph : header.getParagraphs()) {
-                    for (XWPFRun run : paragraph.getRuns()) {
+                    for (int i = 0; i < paragraph.getRuns().size(); i++) {
+                        XWPFRun run = paragraph.getRuns().get(i);
                         String text = run.getText(0);
-                        if (text != null && text.contains("?CLIENT_SRL?")) {
-                            text = text.replace("?CLIENT_SRL?", clientSrl);
+                        if (text != null) {
+                            if (text.contains("?CLIENT_SRL?")) {
+                                text = text.replace("?CLIENT_SRL?", clientSrl);
+                            } else {
+                                if (text.startsWith("?")) {
+                                    text = clientSrl;
+                                    if (paragraph.getRuns().size() > i + 1) {
+                                        XWPFRun nextRun = paragraph.getRuns().get(i + 1);
+                                        String nextText = nextRun.getText(0);
+                                        nextText = null;
+                                        nextRun.setText(nextText, 0);
+                                    }
+                                }
+                            }
                             run.setText(text, 0);
                         }
                     }
@@ -146,11 +193,57 @@ public class SaveFolderController {
             String usersName = placeholders.get("?USERS_NAME?");
             for (XWPFFooter footer : doc.getFooterList()) {
                 for (XWPFParagraph paragraph : footer.getParagraphs()) {
-                    for (XWPFRun run : paragraph.getRuns()) {
+                    for (int i = 0; i < paragraph.getRuns().size(); i++) {
+                        XWPFRun run = paragraph.getRuns().get(i);
                         String text = run.getText(0);
-                        if (text != null && text.contains("?USERS_NAME?")) {
-                            text = text.replace("?USERS_NAME?", "Ing. " + usersName);
+                        if (text != null) {
+                            if (text.contains("?USERS_NAME?")) {
+                                text = text.replace("?USERS_NAME?", usersName);
+                            } else {
+                                if (text.startsWith("?")) {
+                                    text = usersName;
+                                    if (paragraph.getRuns().size() > i + 1) {
+                                        XWPFRun nextRun = paragraph.getRuns().get(i + 1);
+                                        String nextText = nextRun.getText(0);
+                                        nextText = null;
+                                        nextRun.setText(nextText, 0);
+                                    }
+                                }
+                            }
                             run.setText(text, 0);
+                        }
+                    }
+                }
+            }
+
+            for (XWPFTable table : doc.getTables()) {
+                for (XWPFTableRow row : table.getRows()){
+                    for (XWPFTableCell cell : row.getTableCells()) {
+                        for (XWPFParagraph paragraph : cell.getParagraphs()) {
+                            for (int i = 0; i < paragraph.getRuns().size(); i++) {
+                                XWPFRun run = paragraph.getRuns().get(i);
+                                String text = run.getText(0);
+                                if (text != null) {
+                                    for (Map.Entry<String, String> entry : placeholders.entrySet()) {
+                                        if (text.contains(entry.getKey())) {
+                                            text = text.replace(entry.getKey(), entry.getValue());
+                                        } else {
+                                            if (text.startsWith("?")) {
+                                                if (entry.getKey().contains(text)) {
+                                                    text = entry.getValue();
+                                                    if (paragraph.getRuns().size() > i + 1) {
+                                                        XWPFRun nextRun = paragraph.getRuns().get(i + 1);
+                                                        String nextText = nextRun.getText(0);
+                                                        nextText = null;
+                                                        nextRun.setText(nextText, 0);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    run.setText(text, 0);
+                                }
+                            }
                         }
                     }
                 }
@@ -176,7 +269,6 @@ public class SaveFolderController {
         placeholders.put("?CONTRACT_NR?", clientData.getContractNr());
         placeholders.put("?PERSONAL_SRL?", clientData.getPersonalSrl());
         placeholders.put("?CLIENT_SRL?", clientData.getClientSrl());
-        placeholders.put("?CLIENTS_SRL?", clientData.getClientSrl());
         placeholders.put("?CHQ?", clientData.getHq());
         placeholders.put("?CCUI?",clientData.getCui());
         placeholders.put("?CRCREGISTER?",clientData.getRcRegister());

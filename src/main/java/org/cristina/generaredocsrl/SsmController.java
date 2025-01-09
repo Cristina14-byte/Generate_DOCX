@@ -5,13 +5,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import jdk.jshell.execution.Util;
-import org.cristina.generaredocsrl.connection.DatabaseConnection;
+
 import org.cristina.generaredocsrl.model.ClientData;
 
-import java.io.IOException;
 import java.nio.file.Path;
-import java.sql.*;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

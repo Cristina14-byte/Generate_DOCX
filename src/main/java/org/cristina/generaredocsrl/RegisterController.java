@@ -1,15 +1,14 @@
 package org.cristina.generaredocsrl;
-import org.cristina.generaredocsrl.Utility;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
+import javafx.stage.Stage;
 import org.cristina.generaredocsrl.connection.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -142,6 +141,7 @@ public class RegisterController{
     }
 
     public void backButtonOnAction(ActionEvent e) {
-        Utility.navigateToView("clientsDB-view.fxml", backButton);
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        stage.close();
     }
 }

@@ -1,5 +1,4 @@
 package org.cristina.generaredocsrl;
-import org.cristina.generaredocsrl.Utility;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
