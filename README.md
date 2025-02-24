@@ -1,5 +1,5 @@
 # **Generare Docs** 🔥📄  
-**Automated document generation for Fire Prevention and Extinction (PSI) & Occupational Safety and Health (SSM).**  
+**Document editing for Fire Prevention and Extinction (PSI) & Occupational Safety and Health (SSM).**  
 
 ## 📌 **Overview**  
 This **JavaFX-based** application streamlines the creation of essential paperwork for companies operating in **fire prevention** and **occupational safety**.  
