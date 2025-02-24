@@ -3,7 +3,11 @@
 
 ## 📌 **Overview**  
 This **JavaFX-based** application streamlines the creation of essential paperwork for companies operating in **fire prevention** and **occupational safety**.  
-The system allows users to select predefined templates, generate **DOCX documents**, and manage them efficiently.  
+The system allows users to select predefined templates, generate **DOCX documents**, and manage them efficiently. 
+
+This project was also developed as part of the **Object-Oriented Programming** course at **Technical University of Cluj-Napoca**, focusing on **Java application development with database integration**.  
+
+📄 **Faculty Documentation:** attached in the repository.
 
 ## 🚀 **Features**  
 - 🔍 **Automatic Folder & File Processing** – Scans predefined directories for relevant templates.  
