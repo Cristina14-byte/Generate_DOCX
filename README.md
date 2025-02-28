@@ -1,4 +1,4 @@
-# **Generare Docs** 🔥📄  
+# **Generate DOCX** 🔥📄  
 **Document editing for Fire Prevention and Extinction (PSI) & Occupational Safety and Health (SSM).**  
 
 ## 📌 **Overview**  
